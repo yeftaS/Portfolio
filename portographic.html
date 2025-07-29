@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gallery</title>
+    <link rel="stylesheet" href="portographic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" class="brand-name">Yefta Setyawan Putra</a>
+            <div class="brand-title">CREATIVE DESIGNER</div>
+        </div>
+        <div class="nav-menu">
+            <a href="porto.html" class="nav-item">WORKS</a>
+            <a href="about.html" class="nav-item">ABOUT</a>
+            <a href="contact.html" class="nav-item">CONTACT</a>
+        </div>
+    </nav>
+
+    <section class="portfolio-section">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <div class="portfolio-number">//</div>
+                <div class="portfolio-title">GRAPHIC.</div>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="Poster" data-count="12 IMAGES">
+                    <div class="portfolio-image-wrapper">
+                        <img src="images/poster.png" alt="Notes on Vision" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Poster</h3>
+                                <p>08 IMAGES</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="SocialMedia" data-count="08 IMAGES">
+                    <div class="portfolio-image-wrapper">
+                        <img src="images/sosmed.png" alt="Undesignated" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Social Media</h3>
+                                <p>09 IMAGES</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="Product" data-count="20 IMAGES">
+                    <div class="portfolio-image-wrapper">
+                        <img src="images/produk.png" alt="Florence" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Product</h3>
+                                <p>05 IMAGES</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="Illustration" data-count="15 IMAGES">
+                    <div class="portfolio-image-wrapper">
+                        <img src="images/ilustrasi.png" alt="Coherence" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Illustration</h3>
+                                <p>09 IMAGES</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination-indicator">
+                <span class="pagination-dot active"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="portfolio-modal" id="portfolioModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-number">09</div>
+                <div class="modal-title">UNDESIGNATED</div>
+            </div>
+
+            <div class="modal-gallery">
+                <div class="modal-grid" id="modalGrid">
+                </div>
+            </div>
+
+            <div class="modal-navigation">
+                <button class="modal-nav-arrow modal-prev" id="modalPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="modal-nav-arrow modal-next" id="modalNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Portfolio data with sample images
+        const portfolioData = {
+            'Poster': {
+                images: [
+                    'images/graphic/poster/poster1.png', 'images/graphic/poster/poster2.png', 'images/graphic/poster/poster3.png', 
+                    'images/graphic/poster/poster4.png', 'images/graphic/poster/poster5.png', 'images/graphic/poster/poster6.png',
+                    'images/graphic/poster/poster7.png', 'images/graphic/poster/poster8.png', 
+                ],
+                number: '01'
+            },
+            'SocialMedia': {
+                images: [
+                    'images/graphic/sosmed/SOSMED 1.png', 'images/graphic/sosmed/SOSMED 2.png', 'images/graphic/sosmed/SOSMED 3.png',
+                    'images/graphic/sosmed/SOSMED 4.png', 'images/graphic/sosmed/SOSMED 5.png', 'images/graphic/sosmed/SOSMED 6.png',
+                    'images/graphic/sosmed/SOSMED 7.png', 'images/graphic/sosmed/SOSMED 8.png', 'images/graphic/sosmed/SOSMED 9.png'
+                ],
+                number: '02'
+            },
+            'Product': {
+                images: [
+                    'images/graphic/produk/produk1.png', 'images/graphic/produk/produk2.jpg', 'images/graphic/produk/produk3.jpg',
+                    'images/graphic/produk/produk4.png', 'images/graphic/produk/produk5.png',
+                ],
+                number: '03'
+            },
+            'Illustration': {
+                images: [
+                    'images/graphic/ilustrasi/ilustrasi (1).png', 'images/graphic/ilustrasi/ilustrasi (2).png', 'images/graphic/ilustrasi/ilustrasi (3).png',
+                    'images/graphic/ilustrasi/ilustrasi (4).png', 'images/graphic/ilustrasi/ilustrasi (5).png', 'images/graphic/ilustrasi/ilustrasi (6).png',
+                    'images/graphic/ilustrasi/ilustrasi (1).jpg', 'images/graphic/ilustrasi/ilustrasi (2).jpg', 'images/graphic/ilustrasi/ilustrasi (3).jpg',
+                ],
+                number: '04'
+            },
+            'WINTER SERIES': {
+                images: [
+                    'portfolio-5-1.jpg', 'portfolio-5-2.jpg', 'portfolio-5-3.jpg',
+                    'portfolio-5-4.jpg', 'portfolio-5-5.jpg', 'portfolio-5-6.jpg',
+                    'portfolio-5-7.jpg', 'portfolio-5-8.jpg', 'portfolio-5-9.jpg',
+                    'portfolio-5-10.jpg', 'portfolio-5-11.jpg', 'portfolio-5-12.jpg',
+                    'portfolio-5-13.jpg', 'portfolio-5-14.jpg', 'portfolio-5-15.jpg',
+                    'portfolio-5-16.jpg', 'portfolio-5-17.jpg', 'portfolio-5-18.jpg'
+                ],
+                number: '11'
+            }
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('portfolioModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalGrid = document.getElementById('modalGrid');
+        const modalTitle = document.querySelector('.modal-title');
+        const modalNumber = document.querySelector('.modal-number');
+        const modalPrev = document.getElementById('modalPrev');
+        const modalNext = document.getElementById('modalNext');
+
+        let currentModalPage = 0;
+        let currentCategory = '';
+        let imagesPerPage = 6;
+
+        // Open modal when portfolio item is clicked
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const category = this.dataset.category;
+                openModal(category);
+            });
+        });
+
+        function openModal(category) {
+            currentCategory = category;
+            currentModalPage = 0;
+            
+            // Update modal title and number
+            modalTitle.textContent = category;
+            modalNumber.textContent = portfolioData[category].number;
+            
+            // Populate modal with images
+            populateModalGrid();
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function populateModalGrid() {
+            const images = portfolioData[currentCategory].images;
+            const startIndex = currentModalPage * imagesPerPage;
+            const endIndex = Math.min(startIndex + imagesPerPage, images.length);
+            
+            modalGrid.innerHTML = '';
+            
+            for (let i = startIndex; i < endIndex; i++) {
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'modal-image-item';
+                imageDiv.innerHTML = `
+                    <img src="${images[i]}" alt="${currentCategory} ${i + 1}">
+                    <div class="modal-image-overlay">
+                        <div class="modal-image-info">
+                            <span>${String(i + 1).padStart(2, '0')}</span>
+                            <p>Yefta Setyawan Putra</p>
+                        </div>
+                    </div>
+                `;
+                modalGrid.appendChild(imageDiv);
+            }
+            
+            // Update navigation buttons
+            modalPrev.style.display = currentModalPage > 0 ? 'block' : 'none';
+            modalNext.style.display = endIndex < images.length ? 'block' : 'none';
+        }
+
+        // Modal navigation
+        modalPrev.addEventListener('click', function() {
+            if (currentModalPage > 0) {
+                currentModalPage--;
+                populateModalGrid();
+            }
+        });
+
+        modalNext.addEventListener('click', function() {
+            const images = portfolioData[currentCategory].images;
+            const maxPages = Math.ceil(images.length / imagesPerPage);
+            if (currentModalPage < maxPages - 1) {
+                currentModalPage++;
+                populateModalGrid();
+            }
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal || e.target.classList.contains('modal-background')) {
+                closeModal();
+            }
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (modal.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                } else if (e.key === 'ArrowLeft') {
+                    modalPrev.click();
+                } else if (e.key === 'ArrowRight') {
+                    modalNext.click();
+                }
+            }
+        });
+
+        // Portfolio grid navigation
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentPage = 0;
+
+        prevBtn.addEventListener('click', function() {
+            console.log('Previous page');
+        });
+
+        nextBtn.addEventListener('click', function() {
+            console.log('Next page');
+        });
+    </script>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="copyright">© All rights reserved 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="#" class="footer-link">INSTAGRAM</a>
+                <a href="#" class="footer-link">LINKEDIN</a>
+                <a href="#" class="footer-link">FACEBOOK</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px 40px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(3px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 2px;
+    text-decoration: none;
+}
+
+.brand-title {
+    font-size: 12px;
+    font-weight: 400;
+    color: #888888;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 35px;
+    margin-top: 10px;
+}
+
+.nav-item {
+    color: #888888;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #F1A04B;
+}
+
+.about-section {
+    background-color: #060606;
+    padding: 80px 0;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #a27c53;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 60px;
+    align-items: start;
+}
+
+.text-content {
+    max-width: 600px;
+}
+
+.name {
+    font-family: "Texturina", serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.intro-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.section-title {
+    font-family: "Texturina", serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.what-i-do-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.years-experience {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.skills-list {
+    font-family: "Texturina", serif;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.skills-list li {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.skills-list li:before {
+    content: "•";
+    color: #a27c53;
+    position: absolute;
+    left: 0;
+}
+
+.philosophy {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.technical-skills {
+    margin-bottom: 40px;
+}
+
+.technical-skills p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+.btn-filled {
+    background-color: #D4A574;
+    color: #1a1a1a;
+    border: 2px solid #D4A574;
+}
+
+.btn-filled:hover {
+    background-color: transparent;
+    color: #D4A574;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5px;
+    border-bottom: 2px solid #D4A574;
+    
+}
+
+.photo-placeholder img {
+    width: 250px;
+    height: 350px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.footer {
+    padding: 40px;
+    background-color: #000000;
+    border-top: 1px solid #222222;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #666666;
+    font-weight: 300;
+}
+
+.footer-right {
+    display: flex;
+    gap: 35px;
+}
+
+.footer-link {
+    color: #888888;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .photo-container {
+        justify-content: flex-start;
+        padding-top: 0;
+    }
+    
+    .photo-placeholder img {
+        width: 200px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 5px;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+        margin-top: 0;
+    }
+
+    .brand-name {
+        color: #F1A04B;
+    }
+
+    .brand-title{
+        color: white;
+        text-align: center;
+    }
+
+    .nav-item {
+    color: white;
+    }
+
+    .nav-item:hover {
+    color: #F1A04B;
+    }
+
+.container {
+        padding: 0 20px;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .about-section {
+        padding: 40px 0;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn {
+        width: fit-content;
+    }
+
+    .footer-content {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+    }
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .name {
+        font-size: 1.3rem;
+    }
+    
+    .photo-placeholder img {
+        width: 180px;
+        height: 220px;
+    }
+}
